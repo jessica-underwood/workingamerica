@@ -39,21 +39,21 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 
 
-  //Rating Map
-  L.choropleth(link, {
-    valueProperty: "rating",
-    //fill
-    scale: ["#00441b", "#f7fcfd"],
-    steps: 10,
-    // q for quartile, e for equidistant, k for k-means
-    mode: "q",
-    style: {
-      // Border color
-      color: "#000000",
-      weight: .5,
-      fillOpacity: 0.85
-    }
-  }).addTo(map);
+// //Rating Map
+// L.choropleth(link, {
+//   valueProperty: "rating",
+//   //fill
+//   scale: ["#00441b", "#f7fcfd"],
+//   steps: 10,
+//   // q for quartile, e for equidistant, k for k-means
+//   mode: "q",
+//   style: {
+//     // Border color
+//     color: "#000000",
+//     weight: .5,
+//     fillOpacity: 0.85
+//   }
+// }).addTo(map);
 
 // // Percent Map
 //   // Rating Map
@@ -88,50 +88,50 @@ L.choropleth(link, {
   }
 }).addTo(map);
 
-//Women's Earning Map
-L.choropleth(link, {
-  valueProperty: "earning_w",
-  //fill
-  scale: ["#fff7fb", "#014636"],
-  steps: 10,
-  // q for quartile, e for equidistant, k for k-means
-  mode: "q",
-  style: {
-    // Border color
-    color: "#000000",
-    weight: .5,
-    fillOpacity: 0.85
-  }
-}).addTo(map);
+// //Women's Earning Map
+// L.choropleth(link, {
+//   valueProperty: "earning_w",
+//   //fill
+//   scale: ["#fff7fb", "#014636"],
+//   steps: 10,
+//   // q for quartile, e for equidistant, k for k-means
+//   mode: "q",
+//   style: {
+//     // Border color
+//     color: "#000000",
+//     weight: .5,
+//     fillOpacity: 0.85
+//   }
+// }).addTo(map);
 
-//Men's Workers Map
-L.choropleth(link, {
-valueProperty: "workers_m",
-//fill
-scale: ["#00441b", "#f7fcfd"],
-steps: 10,
-// q for quartile, e for equidistant, k for k-means
-mode: "q",
-style: {
-  // Border color
-  color: "#000000",
-  weight: .5,
-  fillOpacity: 0.85
-}
-}).addTo(map);
+// //Men's Workers Map
+// L.choropleth(link, {
+// valueProperty: "workers_m",
+// //fill
+// scale: ["#00441b", "#f7fcfd"],
+// steps: 10,
+// // q for quartile, e for equidistant, k for k-means
+// mode: "q",
+// style: {
+//   // Border color
+//   color: "#000000",
+//   weight: .5,
+//   fillOpacity: 0.85
+// }
+// }).addTo(map);
 
-//Women's Workers Map
-L.choropleth(link, {
-  valueProperty: "workers_w",
-  //fill
-  scale: ["#00441b", "#f7fcfd"],
-  steps: 10,
-  // q for quartile, e for equidistant, k for k-means
-  mode: "q",
-  style: {
-    // Border color
-    color: "#000000",
-    weight: .5,
-    fillOpacity: 0.85
-  }
-}).addTo(map);
+// //Women's Workers Map
+// L.choropleth(link, {
+//   valueProperty: "workers_w",
+//   //fill
+//   scale: ["#00441b", "#f7fcfd"],
+//   steps: 10,
+//   // q for quartile, e for equidistant, k for k-means
+//   mode: "q",
+//   style: {
+//     // Border color
+//     color: "#000000",
+//     weight: .5,
+//     fillOpacity: 0.85
+//   }
+// }).addTo(map);
