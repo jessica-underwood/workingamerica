@@ -9,7 +9,14 @@ for (let i = 0; i < link.features.length; i++) {
     // console.log("data" + data[j].State);
     if (link.features[i].properties.NAME == data[j].State) {
       console.log("Bingo!");
-      link.features[i].properties.rating = data[j]["Rating"];
+      link.features[i].properties.rating = data[j]["Rating"]
+      link.features[i].properties.percent = data[j]["Women's earnings as a percentage of men's"]
+      // link.features[i].properties.rating = data[j]["Rating"]
+      // link.features[i].properties.rating = data[j]["Rating"]
+      // link.features[i].properties.rating = data[j]["Rating"]
+      // link.features[i].properties.rating = data[j]["Rating"]
+
+      ;
     }
   }
 }
@@ -29,34 +36,39 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(map);
  
-// var link ="../../gz_2010_us_040_00_500k.json";
-var mapStyle = {
-  color: "white",
-  fillColor: "pink",
-  fillOpacity: 0.5,
-  weight: 1.5
-};
 
 
-  // Creating a GeoJSON layer with the retrieved data
+
+  // Rating Map
+  // L.choropleth(link, {
+  //   valueProperty: "rating",
+  //   //fill
+  //   scale: ["#00441b", "#f7fcfd"],
+  //   steps: 10,
+  //   // q for quartile, e for equidistant, k for k-means
+  //   mode: "q",
+  //   style: {
+  //     // Border color
+  //     color: "#000000",
+  //     weight: .5,
+  //     fillOpacity: 0.85
+  //   }
+  // }).addTo(map);
+
+// Percent Map
+  // Rating Map
   L.choropleth(link, {
-    // Define what  property in the features to use
-    valueProperty: "rating",
-
-    // Set color scale
-    scale: ["#ffffb2", "#b10026"],
-
-    // Number of breaks in step range
+    valueProperty: "percent",
+    //fill
+    scale: ["#ffffe5", "#004529"],
     steps: 10,
-
     // q for quartile, e for equidistant, k for k-means
     mode: "q",
     style: {
       // Border color
-      color: "#fff",
-      weight: 1,
-      fillOpacity: 0.8
+      color: "#000000",
+      weight: .5,
+      fillOpacity: 0.85
     }
   }).addTo(map);
-
  
