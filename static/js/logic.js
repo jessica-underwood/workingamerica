@@ -11,10 +11,10 @@ for (let i = 0; i < link.features.length; i++) {
       console.log("Bingo!");
       link.features[i].properties.rating = data[j]["Rating"]
       link.features[i].properties.percent = data[j]["Women's earnings as a percentage of men's"]
-      // link.features[i].properties.rating = data[j]["Rating"]
-      // link.features[i].properties.rating = data[j]["Rating"]
-      // link.features[i].properties.rating = data[j]["Rating"]
-      // link.features[i].properties.rating = data[j]["Rating"]
+      link.features[i].properties.earning_m = data[j]["Median weekly earnings"]
+      link.features[i].properties.workers_m = data[j]["Men Number of workers (in thousands)"]
+      link.features[i].properties.earning_w = data[j]["Women Median weekly earnings"]
+      link.features[i].properties.workers_w = data[j]["Total Number of Workers (in thousands)"]
 
       ;
     }
@@ -39,28 +39,11 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 
 
-  // Rating Map
-  // L.choropleth(link, {
-  //   valueProperty: "rating",
-  //   //fill
-  //   scale: ["#00441b", "#f7fcfd"],
-  //   steps: 10,
-  //   // q for quartile, e for equidistant, k for k-means
-  //   mode: "q",
-  //   style: {
-  //     // Border color
-  //     color: "#000000",
-  //     weight: .5,
-  //     fillOpacity: 0.85
-  //   }
-  // }).addTo(map);
-
-// Percent Map
-  // Rating Map
+  //Rating Map
   L.choropleth(link, {
-    valueProperty: "percent",
+    valueProperty: "rating",
     //fill
-    scale: ["#ffffe5", "#004529"],
+    scale: ["#00441b", "#f7fcfd"],
     steps: 10,
     // q for quartile, e for equidistant, k for k-means
     mode: "q",
@@ -71,4 +54,84 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
       fillOpacity: 0.85
     }
   }).addTo(map);
+
+// // Percent Map
+//   // Rating Map
+//   L.choropleth(link, {
+//     valueProperty: "percent",
+//     //fill
+//     scale: ["#ffffe5", "#004529"],
+//     steps: 10,
+//     // q for quartile, e for equidistant, k for k-means
+//     mode: "q",
+//     style: {
+//       // Border color
+//       color: "#000000",
+//       weight: .5,
+//       fillOpacity: 0.85
+//     }
+//   }).addTo(map);
  
+//Men's Earnings Map
+L.choropleth(link, {
+  valueProperty: "earning_m",
+  //fill
+  scale: ["#f7fcf0", "#084081"],
+  steps: 10,
+  // q for quartile, e for equidistant, k for k-means
+  mode: "q",
+  style: {
+    // Border color
+    color: "#000000",
+    weight: .5,
+    fillOpacity: 0.85
+  }
+}).addTo(map);
+
+//Women's Earning Map
+L.choropleth(link, {
+  valueProperty: "earning_w",
+  //fill
+  scale: ["#fff7fb", "#014636"],
+  steps: 10,
+  // q for quartile, e for equidistant, k for k-means
+  mode: "q",
+  style: {
+    // Border color
+    color: "#000000",
+    weight: .5,
+    fillOpacity: 0.85
+  }
+}).addTo(map);
+
+//Men's Workers Map
+L.choropleth(link, {
+valueProperty: "workers_m",
+//fill
+scale: ["#00441b", "#f7fcfd"],
+steps: 10,
+// q for quartile, e for equidistant, k for k-means
+mode: "q",
+style: {
+  // Border color
+  color: "#000000",
+  weight: .5,
+  fillOpacity: 0.85
+}
+}).addTo(map);
+
+//Women's Workers Map
+L.choropleth(link, {
+  valueProperty: "workers_w",
+  //fill
+  scale: ["#00441b", "#f7fcfd"],
+  steps: 10,
+  // q for quartile, e for equidistant, k for k-means
+  mode: "q",
+  style: {
+    // Border color
+    color: "#000000",
+    weight: .5,
+    fillOpacity: 0.85
+  }
+}).addTo(map);
