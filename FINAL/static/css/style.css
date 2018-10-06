@@ -32,13 +32,23 @@ html {
 
 .footer {
  
-  width: 1500px;
-  padding: 5px;
+  
+ 
   border: 5px solid whitesmoke;
   margin: 0;
-    background-color: grey;
+    background-color: lightgrey;
     text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: blue;
     
+    
+
+
+
+
 }
 
 #wrapperHeader{
